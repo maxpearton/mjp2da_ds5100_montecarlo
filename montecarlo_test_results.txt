@@ -1,0 +1,45 @@
+-bash-4.2$python3 montecarlo_test.py
+...Row 0: ['B', 'X']
+Row 1: ['A', 'Y']
+Row 2: ['C', 'X']
+Row 3: ['B', 'Z']
+Row 4: ['B', 'X']
+Results:
+  Die_1 Die_2
+0     B     X
+1     A     Y
+2     C     X
+3     B     Z
+4     B     X
+Jackpot Count:
+0
+.......EE....
+======================================================================
+ERROR: test_die_validate_faces_and_weights_distinct_faces (__main__.TestMonteCarlo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "montecarlo_test.py", line 49, in test_die_validate_faces_and_weights_distinct_fac
+es
+    die_not_distinct = Die(faces_not_distinct, weights)
+  File "/sfs/qumulo/qhome/mjp2da/montecarlo/montecarlo.py", line 26, in __init__
+    self._validate_faces_and_weights()
+  File "/sfs/qumulo/qhome/mjp2da/montecarlo/montecarlo.py", line 39, in _validate_faces_a
+nd_weights
+    raise ValueError("Faces must be distinct.")
+ValueError: Faces must be distinct.
+======================================================================
+ERROR: test_die_validate_faces_and_weights_numeric_weights (__main__.TestMonteCarlo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "montecarlo_test.py", line 70, in test_die_validate_faces_and_weights_numeric_weig
+hts 
+die_non_numeric = Die(faces, weights_non_numeric)
+  File "/sfs/qumulo/qhome/mjp2da/montecarlo/montecarlo.py", line 26, in __init__
+    self._validate_faces_and_weights()
+  File "/sfs/qumulo/qhome/mjp2da/montecarlo/montecarlo.py", line 44, in _validate_faces_a
+nd_weights
+    raise TypeError("Weights must be numeric.")
+TypeError: Weights must be numeric.
+----------------------------------------------------------------------
+Ran 16 tests in 0.049s
+FAILED (errors=2)
