@@ -60,7 +60,8 @@ combinations = analyzer.combo_count()
 
 # Compute distinct permutations and their counts
 permutations = analyzer.permutation_count()
-API Description
+
+#API Description
 Die Class
 Methods
 __init__(faces, weights=None)
